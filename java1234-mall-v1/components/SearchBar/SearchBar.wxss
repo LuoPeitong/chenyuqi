@@ -10,7 +10,6 @@
   align-items: center;
   background-color: #fff;
   border-radius: 15rpx;
-  /*圆角*/
   color: #666;
 }
 .search_bar navigator icon {

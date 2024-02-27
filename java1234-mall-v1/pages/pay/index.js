@@ -30,19 +30,20 @@ Page({
     // 判断缓存中是否有token
     const token=wx.getStorageSync('token');
     if(!token){
-      // const {code}=await login();
-      // wx.getUserProfile({
-      //   desc: '获取用户信息',
-      //   success: (res)=>{
-      //     const {encryptedData,rawData,iv,signature}=res;
+      //获取用户信息支付
+      const {code}=await login();
+      wx.getUserProfile({
+        desc: '获取用户信息',
+        success: (res)=>{
+          const {encryptedData,rawData,iv,signature}=res;
           
-      //     console.log(code,encryptedData,rawData,iv,signature)
-      //   },
-      //   fail:()=>{
-      //     console.log("登录失败")
-      //   }
-      // })
-
+          console.log(code,encryptedData,rawData,iv,signature)
+        },
+        fail:()=>{
+          console.log("登录失败")
+        }
+      })
+      //
       Promise.all([getLogin(),getUserProfile()]).then((res)=>{
         console.log(res)
         let loginParam={
@@ -111,10 +112,11 @@ Page({
       console.log(res.orderNo);
       let orderNo=res.orderNo;
       console.log("orderNo:"+orderNo);
-      const preparePayRes=await requestUtil({url:"/my/order/preparePay",method:"POST",data:orderNo});
-      console.log("preparePayRes:"+preparePayRes)
-      let payRes=await requestPay(preparePayRes);
-      
+      //这里
+  // const preparePayRes=await requestUtil({url:"/my/order/preparePay",method:"POST",data:orderNo});
+  // console.log("preparePayRes:"+preparePayRes)
+  // let payRes=await requestPay(preparePayRes);
+      //这里
       // 删除缓冲中 已经支付的商品
       let newCart=wx.getStorageSync('cart');
       newCart=newCart.filter(v=>!v.checked);

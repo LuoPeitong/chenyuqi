@@ -11,13 +11,13 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#FF5700",
+    "navigationBarBackgroundColor": "#b91b1b",
     "navigationBarTitleText": "X7的商城",
     "navigationBarTextStyle": "white"
   },
   "tabBar": {
-    "color": "999",
-    "selectedColor": "#FF5700",
+    "color": "#999",
+    "selectedColor": "#b91b1b",
     "backgroundColor": "#fafafa",
     "position": "bottom",
     "borderStyle": "black",

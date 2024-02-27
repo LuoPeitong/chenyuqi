@@ -2,7 +2,7 @@
 let ajaxTimes=0;
 
 // 定义公共的url
-const baseUrl="http://192.168.0.116/";
+const baseUrl="http://192.168.31.220/";
 
 /**
  * 返回baseUrl
